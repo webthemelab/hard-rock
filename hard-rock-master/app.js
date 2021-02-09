@@ -5,6 +5,7 @@ const searchSongs = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => displaySongs(data.data))
+        .catch(error =>displayError('something is wrong please try agin later...!'));
 }
 
 const displaySongs = songs => {
@@ -37,9 +38,15 @@ const getLyric = (artist,title) =>{
     fetch(url)
     .then(res => res.json())
     .then (data => DisplayLyrics(data.lyrics))
+    .catch(error => displayError('something is wrong please try agin later...!');
 }
 
 const DisplayLyrics = lyrics =>{
     const lyricsDiv = document.getElementById('songLyrics');
     lyricsDiv.innerText = lyrics;
+}
+
+const displayError = error =>{
+    const errorTag = document.getElementById('error-message');
+    errorTag.innerText = error;
 }
