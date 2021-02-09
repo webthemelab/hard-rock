@@ -38,7 +38,7 @@ const getLyric = (artist,title) =>{
     fetch(url)
     .then(res => res.json())
     .then (data => DisplayLyrics(data.lyrics))
-    .catch(error => displayError('something is wrong please try agin later...!');
+    .catch(error => displayError('something is wrong please try agin later...!'));
 }
 
 const DisplayLyrics = lyrics =>{
